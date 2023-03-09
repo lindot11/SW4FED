@@ -34,7 +34,7 @@
         </StackPanel>
 
         <Button Command="{Binding SaveAddDebtorCommand}" Content="Save" Style="{StaticResource smallButton}"
-                 Grid.Row="2" HorizontalAlignment="Left"/>
+                 Grid.Row="2" HorizontalAlignment="Left" IsDefault="True"/>
         <Button Command="{Binding CancelAddDebtorCommand}" Content="Cancel" Style="{StaticResource smallButton}"
                 Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"/>
     </Grid>

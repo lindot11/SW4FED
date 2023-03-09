@@ -75,6 +75,8 @@ namespace TheDebtBook.ViewModels
             {
                 if(r.Result == ButtonResult.OK )
                 {
+                    newDebtor.DebtHistory = new ObservableCollection<DebtTrack>();
+                    newDebtor.DebtHistory.Add(new DebtTrack(newDebtor.CurrentDebt));
                     Debtors.Add(newDebtor);
                     CurrentDebtor = newDebtor;
                 }

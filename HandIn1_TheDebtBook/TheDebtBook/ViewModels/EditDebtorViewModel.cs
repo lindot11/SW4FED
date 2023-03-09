@@ -52,7 +52,7 @@ namespace TheDebtBook.ViewModels
         {
             get
             {
-                bool _isValid = true;
+                _isValid = true;
                 if (string.IsNullOrWhiteSpace(CurrentDebtor.CurrentDebt))
                     _isValid = false;
                 return _isValid;

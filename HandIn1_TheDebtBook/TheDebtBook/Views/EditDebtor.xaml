@@ -26,11 +26,11 @@
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="10">
             <TextBox Text="{Binding AddValue}" FontSize="14"/>
             <Button Content="Add value" Command="{Binding AddValueCommand}"
-                    Style="{StaticResource bigButton}"/>
+                    Style="{StaticResource bigButton}" IsDefault="True"/>
         </StackPanel>
         
         <Button Command="{Binding CloseDialogCommand}" Content="Close"
-                CommandParameter="True" IsDefault="True"  
+                CommandParameter="True"   
                 Grid.Column="1" Grid.Row="3" Style="{StaticResource bigButton}"/>
 
         <DataGrid ItemsSource="{Binding CurrentDebtor.DebtHistory}" 
