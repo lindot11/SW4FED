@@ -12,28 +12,40 @@
         Title="{Binding Title}" Height="350" Width="400" >
 
 
-    <Grid Margin="10,10,10,10" Background="{StaticResource myBackground}">
+    <Grid Background="{StaticResource myBackground}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="224*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center">
+        <DockPanel Name="dockPanelMain" VerticalAlignment="Center" Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top" Name="mainMenu">
+                <MenuItem Header="_File" >
+                    <MenuItem Header="_New" Command="{Binding NewFileCommand}"/>
+                    <MenuItem Header="_Open" Command="{Binding OpenFileCommand}" />
+                    <MenuItem Header="_Save" Command="{Binding SaveCommand}" />
+                    <MenuItem Header="Save _As" Command="{Binding SaveAsCommand}" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <Label Content="Debtors" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="16" FontWeight="Bold"/>
         </Viewbox>
 
-        <Button Content=" Add " Command="{Binding AddDebtorCommand}" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
-            VerticalAlignment="Top" HorizontalAlignment="Center" Style="{StaticResource smallButton}"/>
-        
+        <Button Content=" Add " Command="{Binding AddDebtorCommand}" Grid.Row="2" Grid.Column="1"
+            VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource smallButton}"/>
+
         <DataGrid ItemsSource="{Binding Debtors}" 
                       SelectedItem="{Binding CurrentDebtor}"
                       IsSynchronizedWithCurrentItem="True"
-                      Grid.Row="1" Grid.RowSpan="2" 
+                      Grid.Row="2" Grid.RowSpan="2" 
                       CanUserAddRows="False" 
                       CanUserDeleteRows="False" 
                       IsReadOnly="True"
