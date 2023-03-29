@@ -105,8 +105,8 @@ namespace TheDebtBook.ViewModels
         {
             var dialog = new OpenFileDialog
             {
-                Filter = "Debtbook documents|*.agn|All Files|*.*",
-                DefaultExt = "agn"
+                Filter = "Debtbook documents|*.dbt|All Files|*.*",
+                DefaultExt = "dbt"
             };
             if (filePath == "")
                 dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
