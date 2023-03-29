@@ -71,7 +71,8 @@ namespace TheDebtBook.ViewModels
             set
             {
                 SetProperty(ref _filename, value);
-                //RaisePropertyChanged("Title");
+                Title = $"The Debt Book - {_filename}";
+                RaisePropertyChanged("Title");
             }
         }
 
@@ -135,8 +136,8 @@ namespace TheDebtBook.ViewModels
         {
             var dialog = new SaveFileDialog
             {
-                Filter = "Debtbook documents|*.agn|All Files|*.*",
-                DefaultExt = "agn"
+                Filter = "Debtbook documents|*.dbt|All Files|*.*",
+                DefaultExt = "dbt"
             };
             if (filePath == "")
                 dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

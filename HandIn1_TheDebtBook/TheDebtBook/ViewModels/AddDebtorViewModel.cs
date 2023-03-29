@@ -46,8 +46,8 @@ namespace TheDebtBook.ViewModels
                 _isValid = true;
                 if (string.IsNullOrWhiteSpace(NewDebtor.Name)) 
                     _isValid = false;
-                if (string.IsNullOrWhiteSpace(NewDebtor.CurrentDebt)) 
-                    _isValid = false;
+                //if (string.IsNullOrWhiteSpace(NewDebtor.CurrentDebt)) 
+                //    _isValid = false;
                 return _isValid;
             }
 

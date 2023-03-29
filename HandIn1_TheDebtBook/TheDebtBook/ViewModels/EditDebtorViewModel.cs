@@ -86,7 +86,7 @@ namespace TheDebtBook.ViewModels
             int debt = int.Parse(CurrentDebtor.CurrentDebt) + int.Parse(AddValue);
 
             CurrentDebtor.CurrentDebt = debt.ToString();
-            CurrentDebtor.DebtHistory.Add(new DebtTrack(CurrentDebtor.CurrentDebt));
+            CurrentDebtor.DebtHistory.Add(new DebtTrack(AddValue));
         }
 
         /*********** CloseDialogCommand ***********/
