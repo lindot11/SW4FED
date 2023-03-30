@@ -154,21 +154,16 @@ namespace TheDebtBook.ViewModels
 
         /*********** SaveCommand ***********/
         private DelegateCommand _saveCommand;
-        public DelegateCommand SaveCommand
-        {
-            get
-            {
-                return _saveCommand ?? (_saveCommand = new DelegateCommand(SaveFileCommand_Execute, SaveFileCommand_CanExecute)
-                  .ObservesProperty(() => Debtors.Count));
-            }
-        }
+        public DelegateCommand SaveCommand => _saveCommand ??
+            (_saveCommand = new DelegateCommand(ExecuteSaveCommand, CanExecuteSaveCommand))
+            .ObservesProperty(() => Debtors.Count).ObservesProperty(() => Filename);
 
-        private void SaveFileCommand_Execute()
+        private void ExecuteSaveCommand()
         {
             SaveFile();
         }
 
-        private bool SaveFileCommand_CanExecute()
+        private bool CanExecuteSaveCommand()
         {
             return (Filename != "") && (Debtors.Count > 0);
         }
